@@ -17,7 +17,8 @@ from django.conf.urls import url
 from django.contrib import admin
 from home.views import get_index, get_about
 from accounts.views import register, profile, login, logout
-
+from products.views import all_products
+from teams.views import get_leaderboard
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', get_index, name='index'),
@@ -25,5 +26,7 @@ urlpatterns = [
     url(r'^register/$', register, name='register'),
     url(r'^profile/$', profile, name='profile'),
     url(r'^login/$', login, name='login'),
-    url(r'^logout/$', logout, name='logout')
+    url(r'^logout/$', logout, name='logout'),
+    url(r'^products/$', all_products),
+    url(r'^leaderboard/', get_leaderboard),
 ]

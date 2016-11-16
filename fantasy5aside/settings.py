@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     'home',
     'accounts',
     'django_forms_bootstrap',
-    'players'
+    'players',
+    'products',
+    'teams',
 ]
 
 MIDDLEWARE = [
@@ -130,3 +132,6 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'accounts.backends.EmailAuth',
 )
+#Stripe enviroment variables
+STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE', 'pk_test_JTBoNtUYzDvlOwjbfRqz7hVg')
+STRIPE_SECRET = os.getenv('STRIPE_SECRET', 'sk_test_5lT8GHUBdXuXS6tAfrpEBzPP')
