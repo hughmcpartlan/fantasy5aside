@@ -18,3 +18,10 @@ class Team(models.Model):
     midfielder2 = models.ForeignKey('players.Player', related_name='as_midfielder2')
     striker1 = models.ForeignKey('players.Player', related_name='as_striker1')
     striker2 = models.ForeignKey('players.Player', related_name='as_striker2')
+
+    def __str__(self):
+        return self.team_name
+
+Team.objects.filter().order_by('total_points')
+
+

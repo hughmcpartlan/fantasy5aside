@@ -10,14 +10,13 @@
                     <th>Team Name</th>
                     <th>Points</th>
                 </tr>
-
+                <tr>
                     {% for team in teams %}
-                        <tr>
-                            <td>{{ team.owner }}</td>
-                            <td>{{ team.team_name }}</td>
-                            <td>{{ team.total_points }}</td>
-                        </tr>
+                        <td>{{ team.owner }}</td>
+                        <td>{{ team.team_name }}</td>
+                        <td>{{ team.total_points }}</td>
                     {% endfor %}
+                </tr>
             </table>
         </div>
     </div>

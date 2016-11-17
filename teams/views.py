@@ -1,7 +1,12 @@
 from django.shortcuts import render
+from .models import Team
 
 # Create your views here.
 
 
+
+
 def get_leaderboard(request):
-    return render(request, 'index.html')
+    teams = Team.objects.all()
+    return render(request, 'leaderboard.html', {"teams":teams})
+

@@ -11,3 +11,7 @@ class Player(models.Model):
     full_name = models.CharField(max_length=200)
     team_name = models.CharField(max_length=200)
     position = models.CharField(max_length=200)
+
+
+    def __str__(self):
+        return self.full_name
