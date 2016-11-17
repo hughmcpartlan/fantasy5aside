@@ -6,6 +6,7 @@
         <div class="table-responsive">
             <table class="table">
                 <tr>
+                    <th>#</th>
                     <th>Username</th>
                     <th>Team Name</th>
                     <th>Points</th>
@@ -13,10 +14,13 @@
 
                     {% for team in teams %}
                         <tr>
+
+                            <td>{{ forloop.counter}}</td>
                             <td>{{ team.owner }}</td>
                             <td>{{ team.team_name }}</td>
                             <td>{{ team.total_points }}</td>
                         </tr>
+
                     {% endfor %}
             </table>
         </div>

@@ -22,6 +22,6 @@ class Team(models.Model):
     def __str__(self):
         return self.team_name
 
-Team.objects.filter().order_by('total_points')
+
 
 
