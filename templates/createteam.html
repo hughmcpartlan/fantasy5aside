@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load bootstrap_tags %}
+{% block content %}
+
+
+
+    <form role="form" method="post">
+    <legend>Create A Team</legend>
+        {{ form|as_bootstrap }}
+        <div class="form-group">
+           <button type="submit" class="btn btn-primary">Create Team</button>
+        </div>
+    </form>
+{% endblock %}

@@ -16,9 +16,10 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from home.views import get_index, get_about
-from accounts.views import register, profile, login, logout
+from accounts.views import register, login, logout
 from products.views import all_products
-from teams.views import get_leaderboard
+from teams.views import get_leaderboard, profile, create_team
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', get_index, name='index'),
@@ -29,4 +30,5 @@ urlpatterns = [
     url(r'^logout/$', logout, name='logout'),
     url(r'^products/$', all_products),
     url(r'^leaderboard/', get_leaderboard),
+    url(r'^createteam/', create_team)
 ]
