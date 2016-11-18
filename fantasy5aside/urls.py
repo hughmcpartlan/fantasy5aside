@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from home.views import get_index, get_about
-from accounts.views import register, login, logout
+from accounts.views import register, login, logout, get_csv
 from products.views import all_products
 from teams.views import get_leaderboard, profile, create_team
 
@@ -29,6 +29,7 @@ urlpatterns = [
     url(r'^login/$', login, name='login'),
     url(r'^logout/$', logout, name='logout'),
     url(r'^products/$', all_products),
-    url(r'^leaderboard/', get_leaderboard),
-    url(r'^createteam/', create_team)
+    url(r'^leaderboard/', get_leaderboard, name='leaderboard'),
+    url(r'^createteam/', create_team),
+    url(r'^csv/', get_csv),
 ]

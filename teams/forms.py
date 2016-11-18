@@ -1,21 +1,22 @@
 from django import forms
 from django.core.exceptions import ValidationError
 from players.models import Player
+from teams.models import Team
 
 
-class CreateTeamForm(forms.Form):
+class CreateTeamForm(forms.ModelForm):
 
-    defenders = [ (player.id, player.full_name) for player in Player.objects.filter(position='Defender')]
-    midfielders = [ (player.id, player.full_name) for player in Player.objects.filter(position='Midfielder')]
-    strikers = [ (player.id, player.full_name) for player in Player.objects.filter(position='Striker')]
+    class Meta:
+        model = Team
+        fields = ['name', 'defender', 'midfielder1', 'midfielder2', 'striker1', 'striker2']
+        # exclude = []
 
-    name = forms.CharField(max_length=100)
-    team_name = forms.CharField(max_length=100)
-    defender = forms.ChoiceField(label='defender', choices=defenders)
-    midfielder1 = forms.ChoiceField(label='midfielder1', choices=midfielders)
-    midfielder2 = forms.ChoiceField(label='midfielder2', choices=midfielders)
-    striker1 = forms.ChoiceField(label='striker1', choices=strikers)
-    striker2 = forms.ChoiceField(label='striker2', choices=strikers)
+    def save(self, commit=True):
+        instance = super(CreateTeamForm, self).save(commit=False)
 
+        if commit:
+            instance.save()
+
+        return instance
 
 

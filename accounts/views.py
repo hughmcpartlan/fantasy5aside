@@ -59,3 +59,6 @@ def logout(request):
     auth.logout(request)
     messages.success(request, "You have successfully logged out")
     return redirect(reverse('index'))
+
+def get_csv(request):
+    return render(request, 'csv.html')

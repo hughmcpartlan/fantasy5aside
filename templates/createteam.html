@@ -5,6 +5,7 @@
 
 
     <form role="form" method="post">
+    {% csrf_token %}
     <legend>Create A Team</legend>
         {{ form|as_bootstrap }}
         <div class="form-group">

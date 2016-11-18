@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'players',
     'products',
     'teams',
+
     #'django_leaderboard',
 ]
 
