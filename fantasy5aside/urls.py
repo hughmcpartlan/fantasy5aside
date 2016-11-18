@@ -15,10 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from home.views import get_index, get_about
+from home.views import get_index, get_about, get_manage, get_downloads
 from accounts.views import register, login, logout, get_csv
 from products.views import all_products
-from teams.views import get_leaderboard, profile, create_team
+from teams.views import get_leaderboard, profile, create_team, get_other_profile
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -32,4 +32,7 @@ urlpatterns = [
     url(r'^leaderboard/', get_leaderboard, name='leaderboard'),
     url(r'^createteam/', create_team),
     url(r'^csv/', get_csv),
+    url(r'^manage/', get_manage, name='manage'),
+    url(r'^downloads/', get_downloads, name='downloads'),
+    # url(r'^(?P<id>\d+)/$', profile, name='profile'),
 ]

@@ -40,9 +40,10 @@ INSTALLED_APPS = [
     'home',
     'accounts',
     'django_forms_bootstrap',
-    'players',
     'products',
+    'players',
     'teams',
+    'leaderboard'
 
     #'django_leaderboard',
 ]

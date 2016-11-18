@@ -25,6 +25,9 @@
             <li><a href="{% url 'register' %}">Register</a></li>
             <li><a href="{% url 'login' %}">Log In</a></li>
             {% endif %}
+            {% if user.is_superuser %}
+            <li><a href="{% url 'manage' %}">Manage</a></li>
+            {% endif %}
         </ul>
         <h1><span class="fui-settings-16 muted">This is Fantasy Football</span></h1>
     </div>

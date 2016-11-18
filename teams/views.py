@@ -26,3 +26,6 @@ def profile(request):
 def get_leaderboard(request):
     teams = Team.objects.all().order_by('-total_points')
     return render(request, 'leaderboard.html', {"teams":teams})
+
+def get_viewprofile(request):
+    return render(request, 'viewprofile.html')
