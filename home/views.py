@@ -16,6 +16,4 @@ def get_manage(request):
     else:
         return render(request, 'manage.html')
 
-def get_downloads(request):
-    return render(request, 'download.html')
 

@@ -14,10 +14,9 @@
 
                     {% for team in teams %}
                         <tr>
-
                             <td>{{ forloop.counter}}</td>
                             <td>{{ team.owner }}</td>
-                            <td>{{ team.name }}</td>
+                            <td><a href="{% url 'viewprofile' team.id %}">{{ team.name}}</a></td>
                             <td>{{ team.total_points }}</td>
                         </tr>
 

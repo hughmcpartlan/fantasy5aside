@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-    <form method="get" action="manage.html">
+    <form method="get" action="{% url 'download_scorelist' %}">
         <button type="submit" class="btn btn-primary">Download</button>
     </form>
 {% endblock %}
