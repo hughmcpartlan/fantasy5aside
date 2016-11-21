@@ -3,8 +3,9 @@ from .models import Team
 from .forms import CreateTeamForm
 from django.contrib.auth.decorators import login_required
 import csv
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from players.models import Defender, Midfielder, Striker
+
 
 # Create your views here
 
@@ -41,54 +42,53 @@ def get_downloads(request):
     response['Content-Disposition'] = 'attachment; filename="f5a-weeklydownload.csv"'
 
     writer = csv.writer(response)
-    writer.writerow(['Player id', 'Full Name', 'Team Name', 'Goals'])
+    writer.writerow(['Player id', 'Full Name', 'Team Name', 'Position', 'Goals'])
     defenders = Defender.objects.all()
     for defender in defenders:
-        writer.writerow([defender.id, defender.full_name, defender.team_name])
+        writer.writerow([defender.id, defender.full_name, defender.team_name, 'D'])
     for midfielder in Midfielder.objects.all():
-        writer.writerow([midfielder.id, midfielder.full_name, midfielder.team_name])
+        writer.writerow([midfielder.id, midfielder.full_name, midfielder.team_name, 'M'])
     for striker in Striker.objects.all():
-        writer.writerow([striker.id, striker.full_name, striker.team_name])
+        writer.writerow([striker.id, striker.full_name, 'S', striker.team_name, 'S'])
 
     return response
 
 
 def upload_csv(request):
-    return '5'
-
-def update_weekly_points(request):
-
-    teams = Team.objects.all()
-    defenders = Defender.objects.all()
-    midfielders = Midfielder.objects.all()
-    strikers = Striker.objects.all()
-    team_weekly_total =[]
-
-    for team in teams:
-        for defender in defenders:
-            if defender.full_name in team:
-                if goals >0:
-                    team_weekly_total.append(goals*3)
-        for midfielder in midfielders:
-            if midfielder.full_name in team:
-                if goals >0:
-                    teamweekly_points_total
+    file = request.FILES['scoresheet']
+    reader = csv.reader(file)
+    my_list = []
+    defenders = []
+    midfielders = []
+    strikers = []
+    return HttpResponse(file.name)
 
 
 
 
 
+# def update_weekly_points(request):
+#
+#     teams = Team.objects.all()
+#     defenders = Defender.objects.all()
+#     midfielders = Midfielder.objects.all()
+#     strikers = Striker.objects.all()
+#     team_weekly_total =[]
+#
+#     for team in teams:
+#         for defender in defenders:
+#             if defender.full_name in team:
+#                 if goals >0:
+#                     team_weekly_total.append(goals*3)
+#         for midfielder in midfielders:
+#             if midfielder.full_name in team:
+#                 if goals >0:
+#                     team_weekly_total.append(goals*2)
+#         for striker in strikers:
+#             if striker.full_name in team:
+#                 team_weekly_total.append(goals)
+#
+#     return
 
 
-
-    if goals > 0:
-        if position =  defender:
-            goals*3
-        elif position = midfielder:
-            goals*2
-
-
-
-
-    return
 

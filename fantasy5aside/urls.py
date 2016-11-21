@@ -18,7 +18,7 @@ from django.contrib import admin
 from home.views import get_index, get_about, get_manage, get_nav
 from accounts.views import register, login, logout, get_csv
 from products.views import all_products
-from teams.views import get_leaderboard, profile, create_team, get_viewprofile, get_downloads
+from teams.views import get_leaderboard, profile, create_team, get_viewprofile, get_downloads, upload_csv
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -35,6 +35,7 @@ urlpatterns = [
     url(r'^manage/', get_manage, name='manage'),
     url(r'^downloads/', get_downloads, name='download_scorelist'),
     url(r'^(?P<id>\d+)/$', get_viewprofile, name='viewprofile'),
-    url(r'^nav/', get_nav)
+    url(r'^nav/', get_nav),
+    url(r'^upload/', upload_csv, name='upload_scorelist')
 
 ]

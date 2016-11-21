@@ -1,8 +1,8 @@
-from django import forms
+from django.forms import FileField, CharField, ModelForm
 from teams.models import Team
 
 
-class CreateTeamForm(forms.ModelForm):
+class CreateTeamForm(ModelForm):
 
     class Meta:
         model = Team
@@ -15,5 +15,8 @@ class CreateTeamForm(forms.ModelForm):
             instance.save()
 
         return instance
+
+
+
 
 

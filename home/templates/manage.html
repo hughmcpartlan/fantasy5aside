@@ -1,7 +1,24 @@
 {% extends "base.html" %}
+{% load bootstrap_tags %}
 {% block content %}
     <form method="get" action="{% url 'download_scorelist' %}">
         <button type="submit" class="btn btn-primary">Download</button>
     </form>
+{% endblock %}
+<div>
+
+
+</div>
+{% block newcontent %}
+
+
+<div>
+    <form enctype="multipart/form-data" role="form" method="post" action="{% url 'upload_scorelist' %}">
+    {% csrf_token %}
+    <legend>Create A Team</legend>
+       <input type="file" name="scoresheet" accept=".csv">
+       <button type="submit" class="btn btn-primary">Upload CSV</button>
+    </form>
+</div>
 {% endblock %}
 

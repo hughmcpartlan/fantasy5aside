@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'products',
     'players',
     'teams',
-    'leaderboard'
+    'leaderboard',
+    'csvimport.app.CSVImportConf',
 
     #'django_leaderboard',
 ]
