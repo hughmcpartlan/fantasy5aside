@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">F5A</a>
+        </div>
+        <ul class="nav nav-pills pull-right">
+            <li><a href="#">Home</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="#">Contact</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'profile' %}">Profile</a></li>
+            <li><a href="{% url 'leaderboard' %}">Leaderboard</a></li>
+            <li><a href="{% url 'logout' %}">Log Out</a></li>
+            {% else %}
+            <li><a href="{% url 'register' %}">Register</a></li>
+            <li><a href="{% url 'login' %}">Log In</a></li>
+            {% endif %}
+            {% if user.is_superuser %}
+            <li><a href="{% url 'manage' %}">Manage</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+</body>
+</html>

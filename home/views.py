@@ -16,4 +16,7 @@ def get_manage(request):
     else:
         return render(request, 'manage.html')
 
+def get_nav(request):
+    return render(request, 'navbar.html')
+
 
