@@ -106,7 +106,7 @@ def update_teams_with_striker(id, goals):
         team.save()
 
 def get_backup(request):
-    return render(request, 'back-up.html')
+    return render(request, 'backup.html')
 
 
 

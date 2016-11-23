@@ -1,12 +1,10 @@
-#navbarr {
-    background-color: aqua;
-    color: chocolate;
+.white {
+    color: white;
 }
 
-.jumbotron {
-    background-color: green;
-}
-
-.navbar {
-    background-color:transparent;
+div.transbox {
+    margin: 30px;
+    background-color: #ffffff;
+    border: 1px solid black;
+    opacity: 0.6;
 }
