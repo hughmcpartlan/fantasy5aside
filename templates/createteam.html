@@ -3,23 +3,61 @@
 {% load static %}
 
 {% block content %}
-    <div class="container">
+{#    <div class="container">#}
+{#        <div class="row">#}
+{#            <div class="col-md-6">#}
+{#                <img src="{% static "img/pitch.jpg" %}" alt="My image"/>#}
+{#            </div>#}
+{#            <div class="col-md-6">#}
+{#                <form role="form" method="post">#}
+{#                    {% csrf_token %}#}
+{#                    <legend>Create A Team</legend>#}
+{#                    {{ form|as_bootstrap }}#}
+{##}
+{#                    <div class="form-group">#}
+{#                        <button type="submit" class="btn btn-primary">Create Team</button>#}
+{#                    </div>#}
+{#                </form>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+        <div class="container">
         <div class="row">
+
             <div class="col-md-6">
-                <img src="{% static "img/pitch.jpg" %}" alt="My image"/>
+
+                <div id="pitch-div">
+                    <img id="pitch" src="{% static "img/pitch.jpg" %}"/>
+                    <div id="div1"><img id="d1" src="{% static "img/ars.png" %}"/>
+                        <p class="player-name">{{ defender.full_name }}</p></div>
+                    <div id="miv1"><img id="m1" src="{% static "img/ars.png" %}"/>
+                        <p class="player-name">{{ midfielder1.full_name }}</p></div>
+                    <div id="miv2"><img id="m2" src="{% static "img/ars.png" %}"/>
+                        <p class="player-name">{{ midfielder2.full_name }}</p></div>
+                    <div id="siv1"><img id="s1" src="{% static "img/ars.png" %}"/>
+                        <p class="player-name">{{ striker1.full_name }}</p></div>
+                    <div id="siv2"><img id="s2" src="{% static "img/ars.png" %}"/>
+                        <p class="player-name">{{ striker2.full_name }}</p></div>
+                </div>
+
             </div>
             <div class="col-md-6">
                 <form role="form" method="post">
                     {% csrf_token %}
                     <legend>Create A Team</legend>
                     {{ form|as_bootstrap }}
+
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">Create Team</button>
                     </div>
                 </form>
             </div>
+
+
         </div>
+
     </div>
+
 
 
 

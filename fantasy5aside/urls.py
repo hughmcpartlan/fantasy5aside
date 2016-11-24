@@ -31,7 +31,7 @@ urlpatterns = [
     url(r'^logout/$', logout, name='logout'),
     url(r'^products/$', all_products),
     url(r'^leaderboard/', get_leaderboard, name='leaderboard'),
-    url(r'^createteam/', create_team),
+    url(r'^createteam/', create_team, name='create_team'),
     url(r'^csv/', get_csv),
     url(r'^manage/', get_manage, name='manage'),
     url(r'^downloads/', get_downloads, name='download_scorelist'),

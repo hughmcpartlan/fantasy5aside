@@ -1,7 +1,61 @@
 {% extends 'base.html' %}
-{% block content %}
-    <h2>Success!</h2>
-    <p>You are logged in as {{ user.email }}</p>
+{% load bootstrap_tags %}
+{% load static %}
 
-    <li></li>
+{% block content %}
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6">
+
+                <div id="pitch-div">
+                    <img id="pitch" src="{% static "img/pitch.jpg" %}"/>
+                    <div id="div1"><img id="d1" src="{% static "img/ars.png" %}"/>
+                        <p class="player-name">{{ defender.full_name }}</p></div>
+                    <div id="miv1"><img id="m1" src="{% static "img/ars.png" %}"/>
+                        <p class="player-name">{{ midfielder1.full_name }}</p></div>
+                    <div id="miv2"><img id="m2" src="{% static "img/ars.png" %}"/>
+                        <p class="player-name">{{ midfielder2.full_name }}</p></div>
+                    <div id="siv1"><img id="s1" src="{% static "img/ars.png" %}"/>
+                        <p class="player-name">{{ striker1.full_name }}</p></div>
+                    <div id="siv2"><img id="s2" src="{% static "img/ars.png" %}"/>
+                        <p class="player-name">{{ striker2.full_name }}</p></div>
+                </div>
+
+            </div>
+            <div class="col-md-6">
+                <div class="table-responsive table-striped table-bordered table-hover">
+                    <table class="table">
+                        <tr>
+                            <td>Team Name</td>
+                            <td>{{ user.name }}</td>
+                        </tr>
+                        <tr>
+                            <td>Total Points</td>
+                            <td>{{ user.total_points }}</td>
+                        </tr>
+                        <tr>
+                            <td>Gameweek Points (14)</td>
+                            <td>{{ user.gameweek_points }}</td>
+                        </tr>
+                        <tr>
+                            <td>Position</td>
+                            <td></td>
+                        </tr>
+
+
+                    </table>
+                    <p>{{ team.name }}</p>
+                </div>
+                <div id="change-team">
+                    <a href="{% url 'create_team' %}">
+                        <button type="submit" class="btn btn-primary">Change Team</button>
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
 {% endblock %}

@@ -26,6 +26,10 @@ h6 {
   font-weight: 700;
   letter-spacing: 1px;
 }
+
+table {
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 p {
   margin: 0 0 25px;
   font-size: 18px;
@@ -110,6 +114,7 @@ a:focus {
     -webkit-transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
     -moz-transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
     transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
+    text-shadow: 1px 1px 2px black, 0 0 25px black, 0 0 5px black;
   }
   .navbar-custom.top-nav-collapse {
     padding: 0;
@@ -123,11 +128,15 @@ a:focus {
   height: auto;
   padding: 100px 0;
   text-align: center;
-  background: rgba(0, 0, 0, 0.5) none;
+  color:white;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
+  background: url(../../img/Iniesta.jpg) no-repeat center scroll;
+  text-shadow: 1px 1px 2px black, 0 0 25px black, 0 0 5px black;
+
+
 }
 .intro .intro-body {
   display: table-cell;
@@ -164,6 +173,7 @@ a:focus {
   -webkit-transition: background 0.3s ease-in-out;
   -moz-transition: background 0.3s ease-in-out;
   transition: background 0.3s ease-in-out;
+
 }
 .btn-circle:hover,
 .btn-circle:focus {
@@ -222,8 +232,8 @@ a:focus {
   width: 100%;
   padding: 50px 0;
   color: white;
-  background: url(../img/downloads-bg.jpg) no-repeat center center scroll;
-  background-color: black;
+
+  background-color: green;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -313,4 +323,94 @@ body {
 
 #borderish {
   margin-top: 130px;
+}
+
+.navb {
+  background-color: transparent;
+}
+
+#change-team {
+  margin: 0 auto;
+  margin-top:30px;
+
+}
+
+#pitch-div {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+
+
+#profile-div {
+  width:80px;
+}
+
+
+#pitch {
+  position: relative;
+  top: 0;
+  left: 0;
+  font-family: "Lora", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color:white;
+}
+
+#d1 {
+  height:100px;
+}
+
+#div1 {
+  position: absolute;
+  top: 30px;
+  left: 115px;
+}
+
+#miv1 {
+  position: absolute;
+  top: 190px;
+  left: 40px;
+}
+
+#m1 {
+  height: 100px;
+}
+
+#miv2 {
+  position: absolute;
+  top: 190px;
+  left: 200px;
+}
+
+#m2 {
+  height: 100px;
+}
+
+#siv1 {
+  position: absolute;
+  top: 350px;
+  left: 40px;
+}
+
+#s1 {
+  height:100px;
+}
+
+#siv2 {
+  position: absolute;
+  top: 350px;
+  left: 200px;
+}
+#s2 {
+  height:100px;
+}
+
+.player-name {
+  background-color: white;
+  color: black;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: center;
+  border:2px solid black;
+  height: 25px;
+  font-size: 13px;
 }
